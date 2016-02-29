@@ -1,0 +1,14 @@
+redirect /index.html http://www.dondelopublico.com/index.php
+DirectoryIndex index.php
+
+
+RewriteEngine On
+RewriteRule ^ficha/([^/]*)$ /public/ficha.php?q=$1 [L]
+RewriteRule ^issn/([^/]*)$ /public/nobase.php?q=$1 [L]
+RewriteRule ^resultados/([^/]*)/([^/]*)/([^/]*)$ /public/resultados.php?busqueda=$1&buscarpor=$2&buscar=Buscar&pagenum=$3 [L]
+RewriteRule ^resultados/([^/]*)/([^/]*)$ /public/resultados.php?busqueda=$1&buscarpor=$2&buscar=Buscar [L]
+
+order allow,deny
+deny from 110.172.
+deny from 14.102.
+allow from all
